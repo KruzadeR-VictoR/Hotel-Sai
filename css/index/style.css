@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: -webkit-gradient(linear, left top, right top, from(#c7c5c5), to(#6871aa));
+  background: linear-gradient(to right, #c7c5c5, #6871aa);
+}
+
+.logo {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  left: -5%;
+}
+
+.logo h1 {
+  font-size: 4.5rem;
+  font-family: 'Stint Ultra Condensed', cursive;
+  font-weight: 20;
+}
+
+.prayimg {
+  margin-top: 20px;
+  margin-left: 10px;
+  height: 80px;
+  width: 80px;
+}
+
+.prayimg img {
+  height: 100%;
+  width: 100%;
+}
+
+.login {
+  border: 3px solid #325f52;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 2px 20px black;
+          box-shadow: 1px 2px 20px black;
+  padding: 30px;
+  height: 450px;
+  width: 300px;
+}
+
+form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+form label {
+  padding-top: 1rem;
+  color: #0b4d35;
+}
+
+form h1 {
+  position: relative;
+  margin: 0 0 10px;
+  text-align: center;
+  padding: 1rem 0 1rem;
+  color: whitesmoke;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  text-shadow: 1px 1px 0px orangered;
+  -webkit-animation: neon 4s linear infinite alternate both running;
+          animation: neon 4s linear infinite alternate both running;
+}
+
+form h1::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100px;
+  background-color: #d6b3b3;
+  left: 50%;
+  bottom: -10%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@-webkit-keyframes neon {
+  from {
+    text-shadow: 1px 1px 0px orangered;
+  }
+  to {
+    text-shadow: 1px 1px 30px orangered;
+  }
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 1px 1px 0px orangered;
+  }
+  to {
+    text-shadow: 1px 1px 30px orangered;
+  }
+}
+
+form button {
+  background-color: #0e5e40;
+  color: whitesmoke;
+  padding: 10px 15px;
+  margin-top: 2rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+}
+
+form button:hover {
+  color: black;
+  background-color: transparent;
+  border: 3px solid #0e5e40;
+}
+
+form h4 {
+  margin-top: 15px;
+  text-align: end;
+}
+
+form h4 a {
+  text-decoration: none;
+  color: #133529;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sailogo {
+  position: absolute;
+  top: 1.3rem;
+  left: 3.1rem;
+  height: 100px;
+}
+
+.sailogo img {
+  height: 100%;
+}
+/*# sourceMappingURL=style.css.map */

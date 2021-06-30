@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/home/homepage.css">      
+</head>
+<body>
+    <section class="container">
+        <div class="bar">
+            <div class="logo">
+                <img src="./hotel_images/saibaba.jpg" alt="saibaba">
+            </div>
+            <div class="image">
+                <img src="./hotel_images/hotel1.png" alt="hotel">
+            </div>           
+            <button class="logoutButton">LOGOUT</button> 
+            <div class="power">
+                <img src="./hotel_images/power.png" alt="">
+            </div>    
+        </div>            
+        <h1 class="heading_title">SAI LODGING</h1>
+        <div class="centerBody">
+            <div class="menu">
+                    <ul class="menuList">
+                        <li>Menu</li>
+                        <li onclick="toggleCtrlBtns()"><a>GUEST ENTRY</a></li>                        
+                        <li><a href="">ROOM</a></li>
+                        <li><a href="">DAILY COLLECTION</a></li>
+                        <li><a href="">REPORT</a></li>
+                        <li class="hotel-1"><img src="./hotel_images/hotel-names.jpg" alt=""></li>
+                        <li class="hotel-2"><img src="./hotel_images/room1.jpg" alt=""></li>
+                    </ul>
+            </div>
+            <div class="hotelimg">                                                                                              
+                <div class="CtrlButtons">
+                    <button onclick="toggleform()">Booking</button>
+                    <button>Cancel</button>
+                    <button>Modify</button>
+                    <svg onclick="toggleCtrlBtns()" class="close_btn2" width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.31193 10.766C9.50593 10.961 9.76093 11.058 10.0159 11.058C10.2709 11.058 10.5259 10.961 10.7199 10.766C11.1089 10.377 11.1089 9.74601 10.7199 9.35701L2.75493 1.384C2.36593 0.995005 1.73593 0.995005 1.34693 1.384C0.957926 1.773 0.957926 2.404 1.34693 2.793L9.31193 10.766Z" fill="black"/>
+                        <path d="M15.4068 14.048L26.6518 2.793C27.0408 2.404 27.0408 1.773 26.6518 1.384C26.2628 0.994999 25.6328 0.822999 25.2438 1.213L13.2958 13H12.9998V13.345L1.19985 25.303C0.81085 25.692 0.884849 26.323 1.27285 26.712C1.46685 26.907 1.75885 27.004 2.01385 27.004C2.26885 27.004 2.54185 26.907 2.73585 26.712L13.9898 15.458L25.2388 26.713C25.4328 26.908 25.6908 27.005 25.9448 27.005C26.1988 27.005 26.4558 26.908 26.6498 26.713C27.0388 26.324 27.0398 25.693 26.6508 25.304L15.4068 14.048Z" fill="black"/>
+                    </svg>                        
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="bookingForm" class="form">
+        <div class="BookingForm">
+        <div class="details">
+            <div>
+                <label for="">Book id</label>
+                <input type="text" placeholder="Book Id">
+            </div>
+            <div>
+                <label for="">Customer Name</label>
+                <input type="text" placeholder="Customer Name">
+            </div>
+            <div>
+                <label for="">Gender</label>
+                <select name="Gender" id="">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Transgender">Transgender</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Id Number</label>
+                <input type="text" placeholder="Id Number">
+                
+            </div>
+            <div>
+                <label for="">Address</label>
+                <input type="text" placeholder="Address">
+            </div>
+            <div>
+                <label for="">age</label>
+                <input type="number" placeholder="Age">
+            </div>
+            <div>
+                <label for="">Mobile no</label>
+                <input type="text" maxlength="10" onkeypress=" return onlyNumberKey(event)" placeholder="Mobile no">
+            </div>
+            <div>
+                <label for="">Id Proof type</label>
+                <select name="ID Type" id="">
+                    <option value="Aadhaar Card">Aadhaar Card</option>
+                    <option value="Driving License">Driving License</option>
+                    <option value="Passport">Passport</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Pincode</label>
+                <input type="text" maxlength="6" onkeypress=" return onlyNumberKey(event)" placeholder="Pincode">
+            </div>
+            <div>
+                <label for="">Police Station</label>
+                <input type="text" placeholder="Police Station">
+            </div>
+            <div class="addGuest">
+                <div>
+                    <label for="">Relative Name :</label>
+                    <input type="text" placeholder="Relative Name">
+                </div>
+                <div>
+                    <label for="">Gender :</label>
+                    <select name="Gender" id="">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Transgender">Transgender</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Id Proof type :</label>
+                    <select name="ID Type" id="">
+                        <option value="Aadhaar Card">Aadhaar Card</option>
+                        <option value="Driving License">Driving License</option>
+                        <option value="Passport">Passport</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Age :</label>
+                    <input type="number" placeholder="Age">
+                </div>
+                <div>
+                    <label for="">Relationship :</label>
+                    <select name="Relationship" id="">
+                        <option value="Family">Family</option>
+                        <option value="Friend">Friend</option>                        
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="">Id Number :</label>
+                    <input type="text" placeholder="Id Number">
+                </div>
+            </div>
+        </div>
+        <div class="roomPrice">
+            <div class="roomDetails">                
+                <div>
+                    <label for="">Time</label>
+                    <input id="time" type="text" placeholder="Time">
+                </div>
+                <div>
+                    <label for="">Room No</label>
+                    <input type="text" placeholder="Room No">
+                </div>
+                <div>
+                    <label for="">Room Price / Day</label>
+                    <input type="text" placeholder="Room Price / Day">
+                </div>
+                <div>
+                    <label for="">Total Guest No:</label>
+                    <input type="text" placeholder="Total Guest No">
+                </div>
+                <div>
+                    <label for="">Additional Guest No :</label>
+                    <input type="text" placeholder="Additional Guest No">
+                </div>
+                <div>
+                    <label for="">No of Days :</label>
+                    <input type="text" placeholder="No of Days">
+                </div>
+            </div>
+        </div>                    
+        <svg class="closeForm" onclick="toggleform()" width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.31193 10.766C9.50593 10.961 9.76093 11.058 10.0159 11.058C10.2709 11.058 10.5259 10.961 10.7199 10.766C11.1089 10.377 11.1089 9.74601 10.7199 9.35701L2.75493 1.384C2.36593 0.995005 1.73593 0.995005 1.34693 1.384C0.957926 1.773 0.957926 2.404 1.34693 2.793L9.31193 10.766Z" fill="black"/>
+            <path d="M15.4068 14.048L26.6518 2.793C27.0408 2.404 27.0408 1.773 26.6518 1.384C26.2628 0.994999 25.6328 0.822999 25.2438 1.213L13.2958 13H12.9998V13.345L1.19985 25.303C0.81085 25.692 0.884849 26.323 1.27285 26.712C1.46685 26.907 1.75885 27.004 2.01385 27.004C2.26885 27.004 2.54185 26.907 2.73585 26.712L13.9898 15.458L25.2388 26.713C25.4328 26.908 25.6908 27.005 25.9448 27.005C26.1988 27.005 26.4558 26.908 26.6498 26.713C27.0388 26.324 27.0398 25.693 26.6508 25.304L15.4068 14.048Z" fill="black"/>
+        </svg>
+    </div> 
+    <div class="formCtrls">
+    <button class="backBtn" onclick="pageChangeToBack()">Back</button>   
+    <button class="AddBtn" onclick="pageChangeToAdd()">Add Guest</button>               
+    <button class="bookBtn" onclick="">Book</button>       
+</div> 
+</section>
+</body>
+<script src="./script/index/login.js"></script>
+<script src="script/home/home.js">        
+</script>  
+</html>

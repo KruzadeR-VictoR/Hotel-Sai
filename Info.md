@@ -1,0 +1,1 @@
+1 . In case of menu bar or center body scrolling happens reduce thr image size of the menu bar

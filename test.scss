@@ -1,0 +1,78 @@
+.BookingForm {
+  background-color: red;
+  height: 400px;
+  width: calc(100% - 15%;
+  display: grid;
+  grid-template-columns: 70% 40%;
+  grid-gap: 10px;
+  // grid-auto-flow:row;
+  .details {
+    grid-column: 1/2;
+    display: grid;
+    // justify-content: space-between;
+    align-items: center;
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+    padding: 1rem;
+    background-color: red;
+    div {
+      display: flex;
+      background-color: blue;
+      justify-content: space-around;
+      align-items: center;
+      // padding: 0 1rem;
+      label {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      input {
+        padding: 0.5rem;
+      }
+    }
+    //? Gender Input
+    div:nth-of-type(4),
+    div:nth-of-type(3) {
+      select {
+        width: 50%;
+        padding: 0.5rem;
+        option {
+          color: black;
+        }
+      }
+    }
+  }
+  .roomPrice {
+    grid-columns: 2/3;
+    background-color: blue;
+    padding: 1rem;
+    .roomDetails {
+      height: 100%;
+      display: grid;
+    //   justify-content:center;
+      align-items: center;
+      grid-template-rows: repeat(5, 1fr);
+      grid-auto-flow: column;
+    //   padding: .5rem;
+      div:nth-of-type(1){
+        grid-column: 1/2;
+    }
+      div:nth-of-type(6){          
+        grid-column: 2/3;
+        input{
+            width: 100px;
+        }
+    }
+      div {
+          background-color: purple;
+          grid-column: 1/3;
+          label{
+            font-size: 1.2rem;
+          }
+          input{
+            padding: .5rem;
+          }
+      }      
+    }
+  }
+}

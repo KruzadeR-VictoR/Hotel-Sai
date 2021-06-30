@@ -1,0 +1,440 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {  
+  position: relative;
+  height: 100vh;
+  padding: 0.5rem;
+  overflow: hidden;
+  .bar {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    background: red;
+    height: 150px;
+    .logo {
+      height: 250px;
+      flex-basis: 10%;
+      img {
+        height: 100%;
+
+        border: 2px solid teal;
+      }
+    }
+    .image {
+      height: 150px;
+      width: 100%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 0 -10.6rem;
+      }
+    }
+  }
+  .heading_title {
+    position: relative;
+    background-color: black;
+    color: gold;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0.5rem 0 0;
+    span {
+      position: absolute;
+      left: -100px;
+      color: red;
+      height: 10px;
+      width: 100px;
+      z-index: 10;
+    }
+  }
+  .centerBody {
+    height:calc(100vh - 205px);
+    display: flex;
+    .menu {             
+      // background-color: red;      
+      flex-basis: 20%;
+      overflow:scroll;
+      .menuList {
+        li {
+          cursor: pointer;
+          position: relative;
+          text-align: center;
+          list-style: none;
+          padding: 0.7rem;
+          background-color: black;
+          width: 100%;
+          margin: 5px 0 0;
+          box-shadow: 1px -1px 10px -4px black;
+          overflow: hidden;
+          z-index: 1;
+          a {
+            text-decoration: none;
+            color: gold;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 350ms ease;
+          }
+          &:hover {
+            a {
+              color: black;
+            }
+          }
+        }
+        li::after {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          background-color: white;
+          left: -100%;
+          top: 0;
+          // border-radius: 0 10px 10px 0;
+          transition: all 350ms linear;
+          z-index: -1;
+        }
+        li:hover::after {
+          left: 0;
+        }
+        li:first-of-type {
+          font-size: 2rem;
+          font-weight: bold;
+          background-color: whitesmoke;
+        }
+        .hotel-1 {
+          padding: 0;
+          height: 130px;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .hotel-2 {
+          padding: 0;
+          height: 130px;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+    .hotelimg {
+      position: relative;
+      flex-basis: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background-color: red;
+      background: linear-gradient(rgba(0, 0, 0, 0.178), rgba(0, 0, 0, 0.726)),
+        url("https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg?cs=srgb&dl=pexels-daria-shevtsova-1095550.jpg&fm=jpg");
+      background-size: cover;      
+      // padding: 1rem;
+      // img{
+      //   height: 100%;
+      //   width: 100%;
+      //   object-fit: cover;
+      // }     
+      .CtrlButtons {
+        display: flex;
+        position: absolute;
+        bottom: 10%;
+        padding: 1rem;
+        justify-content: space-between;
+        border-radius: 30px 0 30px 0;
+        box-shadow: 2px 2px 20px rgba(251, 255, 0, 0.466);
+        visibility:hidden;
+        opacity: 0;
+        transition: all 350ms ease;
+        button {
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: bold;
+          letter-spacing: 1px;
+          padding: 0.5rem 1.5rem;
+          margin: 0 2.5rem;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 1px 2px 20px rgba(255, 255, 255, 0.411);
+          transition: all 300ms ease-in-out;
+        }
+        button:nth-of-type(1) {
+          background-color: #0bda51;
+          transition: all 300ms ease-in-out;
+          &:hover {
+            background-color: black;
+            color: #0bda51;
+            box-shadow: 1px 2px 20px #0bda51;
+          }
+        }
+        button:nth-of-type(2) {
+          background-color: #d2042d;
+          &:hover {
+            background-color: black;
+            color: #d2042d;
+            box-shadow: 1px 2px 20px #d2042d;
+          }
+        }
+        button:nth-of-type(3) {
+          background-color: #40b5ad;
+          &:hover {
+            background-color: black;
+            color: #40b5ad;
+            box-shadow: 1px 2px 20px #40b5ad;
+          }
+        }
+        .close_btn2 {
+          cursor: pointer;
+          position: absolute;
+          height: 20px;
+          width: 20px;
+          top: -30%;
+          right: 1%;
+          transform: translate(-50%, -50%);
+          z-index: 1;
+          path {
+            fill: whitesmoke;
+          }
+        }
+      }
+      .activeCtrlBtns {
+        visibility: visible;
+        opacity: 1;
+        bottom: 70%;
+        transition: all 350ms ease;
+      }
+      .active {
+        visibility: visible;
+        opacity: 1;
+        top: 10%;
+      }
+    }
+  }
+}
+.logoutButton {
+  cursor: pointer;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  width: 150px;
+  right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.5rem 1.3rem;
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.747);
+  transform: translateY(-50%);
+  box-shadow: 1px 5px 10px -5px;
+  transition: all 300ms linear;
+}
+.logoutButton:hover {
+  border-radius: 15px;
+  background: linear-gradient(
+    to bottom right,
+    transparent,
+    rgba(255, 187, 135, 0.616)
+  );
+}
+.power {
+  position: absolute;
+  right: 2em;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  img {
+    height: 100%;
+  }
+}
+.form{  
+  // background-color: red;  
+  position: absolute;
+  top:20%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  visibility:hidden;
+  opacity: 0;
+  transition: all 500ms ease-in-out;
+}
+.BookingForm {  
+  position: relative;
+  background-color:whitesmoke;   
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-gap: 10px;
+  width: calc(100% - 5%);
+  padding: 2rem;  
+  box-shadow: 1px 2px 20px rgba(255, 0, 0, 0.644);
+  // grid-auto-flow:row;
+  .details {
+    overflow: hidden;
+    position: relative;
+    grid-column: 1/2;
+    display: grid;
+    // justify-content: space-between;
+    align-items: center;
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+    padding: 1rem;
+    // background-color: red;
+    div:not(.addGuest){
+      display: flex;
+      // background-color: blue;
+      justify-content: space-around;
+      align-items: center;
+      margin: 1rem;
+      // padding: 0 1rem;
+      label {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      input {
+        padding: 0.5rem;
+      }
+    }
+    //? Gender Input
+    div:nth-of-type(8),
+    div:nth-of-type(3) {
+      select {
+        width: 50%;
+        padding: 0.5rem;
+        option {
+          color: black;
+        }
+      }
+    }
+  }
+  .addGuest{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color:whitesmoke;
+    display: grid;    
+    grid-template-rows: repeat(3,1fr);
+    grid-auto-flow: column; 
+    padding: 1rem;
+    grid-column-gap: 10px;
+    visibility:hidden;  
+    opacity: 0;  
+    transition: all 500ms ease-in-out;
+    div{
+      // background-color: red;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 !important;
+      label {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      input {
+        padding: 0.5rem;
+      }
+    }
+    div:nth-of-type(2),
+    div:nth-of-type(3),  
+    div:nth-of-type(5){
+      select {
+        width: 50%;
+        padding: 0.5rem;
+        option {
+          color: black;
+        }
+      }
+    }
+  }
+  .activeAddGuest{
+    top: 0;
+    visibility: visible;
+    opacity: 1;    
+  }
+  .roomPrice {
+    grid-column: 2/3;    
+    padding: 1rem;
+    .roomDetails {
+      height: 100%;
+      display: grid;
+    //   justify-content:center;
+      align-items: center;
+      grid-template-rows: repeat(5, 1fr);
+      grid-auto-flow: column;
+      border: 1px solid red;
+      border-radius: 5px;
+      padding: 1rem;
+      div:nth-of-type(1){
+        grid-column: 1/2;
+        input{
+          width: 150px;
+        }
+    }
+      div:nth-of-type(6){          
+        grid-column: 2/3;
+        input{
+            width: 100px;
+        }
+    }
+      div {          
+          grid-column: 1/3;          
+          label{
+            font-size: 1.2rem;
+          }
+          input{
+            padding: .5rem;
+          }
+      }      
+    }
+  }    
+}
+.formCtrls{
+  // background-color: red;  
+  // width: 50%;
+  // display: flex;
+  // justify-content: space-between;
+}
+.bookBtn,.AddBtn,.backBtn{
+  cursor: pointer;  
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: .5rem 2rem;
+  margin: 1rem 1rem;  
+}
+.closeForm{
+  cursor: pointer;
+  position:absolute;
+  right: 0;
+  top:-5%;
+  transform: translate(-50%,-50%);
+  path{
+    fill:black;    
+  }
+}
+.activeform{
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+}
+.blurContainer{
+  filter: blur(20px);
+  pointer-events: none;
+  user-select: none;
+  transition: 500ms ease;
+}

@@ -1,0 +1,563 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+.container .bar {
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: red;
+  height: 150px;
+}
+
+.container .bar .logo {
+  height: 250px;
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+}
+
+.container .bar .logo img {
+  height: 100%;
+  border: 2px solid teal;
+}
+
+.container .bar .image {
+  height: 150px;
+  width: 100%;
+}
+
+.container .bar .image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 -10.6rem;
+     object-position: 0 -10.6rem;
+}
+
+.container .heading_title {
+  position: relative;
+  background-color: black;
+  color: gold;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 0.5rem 0 0;
+}
+
+.container .heading_title span {
+  position: absolute;
+  left: -100px;
+  color: red;
+  height: 10px;
+  width: 100px;
+  z-index: 10;
+}
+
+.container .centerBody {
+  height: calc(100vh - 205px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .centerBody .menu {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+  overflow: scroll;
+}
+
+.container .centerBody .menu .menuList li {
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  list-style: none;
+  padding: 0.7rem;
+  background-color: black;
+  width: 100%;
+  margin: 5px 0 0;
+  -webkit-box-shadow: 1px -1px 10px -4px black;
+          box-shadow: 1px -1px 10px -4px black;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.container .centerBody .menu .menuList li a {
+  text-decoration: none;
+  color: gold;
+  font-size: 1.3rem;
+  font-weight: bold;
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+
+.container .centerBody .menu .menuList li:hover a {
+  color: black;
+}
+
+.container .centerBody .menu .menuList li::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  left: -100%;
+  top: 0;
+  -webkit-transition: all 350ms linear;
+  transition: all 350ms linear;
+  z-index: -1;
+}
+
+.container .centerBody .menu .menuList li:hover::after {
+  left: 0;
+}
+
+.container .centerBody .menu .menuList li:first-of-type {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: whitesmoke;
+}
+
+.container .centerBody .menu .menuList .hotel-1 {
+  padding: 0;
+  height: 130px;
+}
+
+.container .centerBody .menu .menuList .hotel-1 img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .centerBody .menu .menuList .hotel-2 {
+  padding: 0;
+  height: 130px;
+}
+
+.container .centerBody .menu .menuList .hotel-2 img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container .centerBody .hotelimg {
+  position: relative;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.178)), to(rgba(0, 0, 0, 0.726))), url("https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg?cs=srgb&dl=pexels-daria-shevtsova-1095550.jpg&fm=jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.178), rgba(0, 0, 0, 0.726)), url("https://images.pexels.com/photos/1095550/pexels-photo-1095550.jpeg?cs=srgb&dl=pexels-daria-shevtsova-1095550.jpg&fm=jpg");
+  background-size: cover;
+}
+
+.container .centerBody .hotelimg .CtrlButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+  padding: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-radius: 30px 0 30px 0;
+  -webkit-box-shadow: 2px 2px 20px rgba(251, 255, 0, 0.466);
+          box-shadow: 2px 2px 20px rgba(251, 255, 0, 0.466);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+
+.container .centerBody .hotelimg .CtrlButtons button {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 0.5rem 1.5rem;
+  margin: 0 2.5rem;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 2px 20px rgba(255, 255, 255, 0.411);
+          box-shadow: 1px 2px 20px rgba(255, 255, 255, 0.411);
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.container .centerBody .hotelimg .CtrlButtons button:nth-of-type(1) {
+  background-color: #0bda51;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.container .centerBody .hotelimg .CtrlButtons button:nth-of-type(1):hover {
+  background-color: black;
+  color: #0bda51;
+  -webkit-box-shadow: 1px 2px 20px #0bda51;
+          box-shadow: 1px 2px 20px #0bda51;
+}
+
+.container .centerBody .hotelimg .CtrlButtons button:nth-of-type(2) {
+  background-color: #d2042d;
+}
+
+.container .centerBody .hotelimg .CtrlButtons button:nth-of-type(2):hover {
+  background-color: black;
+  color: #d2042d;
+  -webkit-box-shadow: 1px 2px 20px #d2042d;
+          box-shadow: 1px 2px 20px #d2042d;
+}
+
+.container .centerBody .hotelimg .CtrlButtons button:nth-of-type(3) {
+  background-color: #40b5ad;
+}
+
+.container .centerBody .hotelimg .CtrlButtons button:nth-of-type(3):hover {
+  background-color: black;
+  color: #40b5ad;
+  -webkit-box-shadow: 1px 2px 20px #40b5ad;
+          box-shadow: 1px 2px 20px #40b5ad;
+}
+
+.container .centerBody .hotelimg .CtrlButtons .close_btn2 {
+  cursor: pointer;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: -30%;
+  right: 1%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.container .centerBody .hotelimg .CtrlButtons .close_btn2 path {
+  fill: whitesmoke;
+}
+
+.container .centerBody .hotelimg .activeCtrlBtns {
+  visibility: visible;
+  opacity: 1;
+  bottom: 70%;
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+
+.container .centerBody .hotelimg .active {
+  visibility: visible;
+  opacity: 1;
+  top: 10%;
+}
+
+.logoutButton {
+  cursor: pointer;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  width: 150px;
+  right: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.5rem 1.3rem;
+  border-radius: 5px;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.747);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-box-shadow: 1px 5px 10px -5px;
+          box-shadow: 1px 5px 10px -5px;
+  -webkit-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+
+.logoutButton:hover {
+  border-radius: 15px;
+  background: -webkit-gradient(linear, left top, right bottom, from(transparent), to(rgba(255, 187, 135, 0.616)));
+  background: linear-gradient(to bottom right, transparent, rgba(255, 187, 135, 0.616));
+}
+
+.power {
+  position: absolute;
+  right: 2em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 20px;
+}
+
+.power img {
+  height: 100%;
+}
+
+.form {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.BookingForm {
+  position: relative;
+  background-color: whitesmoke;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 60% 40%;
+      grid-template-columns: 60% 40%;
+  grid-gap: 10px;
+  width: calc(100% - 5%);
+  padding: 2rem;
+  -webkit-box-shadow: 1px 2px 20px rgba(255, 0, 0, 0.644);
+          box-shadow: 1px 2px 20px rgba(255, 0, 0, 0.644);
+}
+
+.BookingForm .details {
+  overflow: hidden;
+  position: relative;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: column;
+  grid-column-gap: 10px;
+  padding: 1rem;
+}
+
+.BookingForm .details div:not(.addGuest) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem;
+}
+
+.BookingForm .details div:not(.addGuest) label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.BookingForm .details div:not(.addGuest) input {
+  padding: 0.5rem;
+}
+
+.BookingForm .details div:nth-of-type(8) select,
+.BookingForm .details div:nth-of-type(3) select {
+  width: 50%;
+  padding: 0.5rem;
+}
+
+.BookingForm .details div:nth-of-type(8) select option,
+.BookingForm .details div:nth-of-type(3) select option {
+  color: black;
+}
+
+.BookingForm .addGuest {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background-color: whitesmoke;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  grid-auto-flow: column;
+  padding: 1rem;
+  grid-column-gap: 10px;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.BookingForm .addGuest div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 !important;
+}
+
+.BookingForm .addGuest div label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.BookingForm .addGuest div input {
+  padding: 0.5rem;
+}
+
+.BookingForm .addGuest div:nth-of-type(2) select,
+.BookingForm .addGuest div:nth-of-type(3) select,
+.BookingForm .addGuest div:nth-of-type(5) select {
+  width: 50%;
+  padding: 0.5rem;
+}
+
+.BookingForm .addGuest div:nth-of-type(2) select option,
+.BookingForm .addGuest div:nth-of-type(3) select option,
+.BookingForm .addGuest div:nth-of-type(5) select option {
+  color: black;
+}
+
+.BookingForm .activeAddGuest {
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.BookingForm .roomPrice {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  padding: 1rem;
+}
+
+.BookingForm .roomPrice .roomDetails {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: column;
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.BookingForm .roomPrice .roomDetails div:nth-of-type(1) {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+}
+
+.BookingForm .roomPrice .roomDetails div:nth-of-type(1) input {
+  width: 150px;
+}
+
+.BookingForm .roomPrice .roomDetails div:nth-of-type(6) {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+}
+
+.BookingForm .roomPrice .roomDetails div:nth-of-type(6) input {
+  width: 100px;
+}
+
+.BookingForm .roomPrice .roomDetails div {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+}
+
+.BookingForm .roomPrice .roomDetails div label {
+  font-size: 1.2rem;
+}
+
+.BookingForm .roomPrice .roomDetails div input {
+  padding: .5rem;
+}
+
+.bookBtn, .AddBtn, .backBtn {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: .5rem 2rem;
+  margin: 1rem 1rem;
+}
+
+.closeForm {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: -5%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.closeForm path {
+  fill: black;
+}
+
+.activeform {
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+
+.blurContainer {
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
+}
+/*# sourceMappingURL=homepage.css.map */

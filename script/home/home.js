@@ -21,6 +21,10 @@ function toggleCtrlBtns() {
   CtrlDisplay.classList.toggle("activeCtrlBtns");
   console.log(CtrlDisplay);
 }
+let UserCtrlDisplay = document.querySelector(".CtrlButtons_2");
+function toggleUserCtrlBtns() {
+  UserCtrlDisplay.classList.toggle("activeCtrlBtns");  
+}
 function toggleUp() {
   // document.querySelector(".CtrlButtons .activeCtrlBtns");
   // CtrlDisplay.style.bottom="10%";
@@ -36,7 +40,12 @@ function toggleform() {
 let detailsPage = document.querySelector(".details");
 let addGuest = document.querySelector(".addGuest");
 function pageChangeToAdd() {
+  const backBtn=document.querySelector(".backBtn");
   addGuest.classList.toggle("activeAddGuest");
+  backBtn.style.visibility="visible";
+  backBtn.style.opacity="1";
+  let roomDetailsOverlay=document.querySelector(".roomdetailsOverlay");
+  roomDetailsOverlay.classList.toggle("roomdetailsOverlayActive");
 }
 function pageChangeToBack() {
   addGuest.classList.remove("activeAddGuest");
@@ -53,5 +62,23 @@ function onlyNumberKey(evt) {
               return false;
        }
    }
-let d=document.querySelector("#time");
-d.value=Date();
+  //|  Date Manipulation
+let d=document.querySelector("#date");
+d.innerHTML= new Date();
+let bookDate=document.querySelector("#bookingDate");
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
+var yyyy = today.getFullYear();
+if(dd<10){
+  dd='0'+dd
+} 
+if(mm<10){
+  mm='0'+mm
+} 
+
+today = yyyy+'-'+mm+'-'+dd;
+// let today=Date();
+// let k=today.toString();
+// console.log(k);
+bookDate.setAttribute("min",today);

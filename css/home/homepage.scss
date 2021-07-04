@@ -106,7 +106,7 @@
           font-size: 2rem;
           font-weight: bold;
           background-color: whitesmoke;
-        }
+        }        
         .hotel-1 {
           padding: 0;
           height: 130px;
@@ -204,7 +204,7 @@
             fill: whitesmoke;
           }
         }
-      }
+      }     
       .activeCtrlBtns {
         visibility: visible;
         opacity: 1;
@@ -215,7 +215,7 @@
         visibility: visible;
         opacity: 1;
         top: 10%;
-      }
+      }            
     }
   }
 }
@@ -258,7 +258,7 @@
 .form{  
   // background-color: red;  
   position: absolute;
-  top:20%;
+  top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 10;
@@ -324,11 +324,11 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    top: 100%;
+    top: 0%;
     left: 0;
     background-color:whitesmoke;
     display: grid;    
-    grid-template-rows: repeat(3,1fr);
+    grid-template-rows: repeat(4,1fr);
     grid-auto-flow: column; 
     padding: 1rem;
     grid-column-gap: 10px;
@@ -359,6 +359,19 @@
         }
       }
     }
+    .addOption{ 
+      grid-column: 1/3;   
+      grid-row: 4/5; 
+      // background-color: red;                  
+      display: flex !important;
+      justify-content: flex-end !important;
+      align-items:center;
+      button{          
+        font-size: 1rem;
+        padding: .5rem 2rem;        
+        cursor: pointer;
+      }      
+    }
   }
   .activeAddGuest{
     top: 0;
@@ -366,9 +379,11 @@
     opacity: 1;    
   }
   .roomPrice {
+    position: relative;    
     grid-column: 2/3;    
     padding: 1rem;
-    .roomDetails {
+    .roomDetails { 
+      position: relative;     
       height: 100%;
       display: grid;
     //   justify-content:center;
@@ -398,7 +413,44 @@
           input{
             padding: .5rem;
           }
-      }      
+      }             
+    }
+    .roomdetailsOverlay{      
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top:0%;      
+      background-color: red;
+      visibility: hidden;
+      opacity: 0;
+      overflow: scroll;
+      padding: 1rem;      
+      transform: all 500ms ease;  
+      p{
+        white-space: nowrap;
+      }    
+    } 
+    .roomdetailsOverlayActive{
+      visibility: visible;
+      opacity: 1;
+      top:5%;      
+      transform: all 500ms ease;
+    }
+  }  
+  .todayDate{
+    position: absolute;
+    top: 0;
+    right: 0;
+    // height: 50px;
+    width: 100%;
+    padding:1rem;
+    white-space: nowrap;
+    background-color:rgba(255, 0, 0, 0.541);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p{
+      font-weight: bold;
     }
   }    
 }
@@ -415,6 +467,11 @@
   letter-spacing: 1px;
   padding: .5rem 2rem;
   margin: 1rem 1rem;  
+}
+.backBtn{
+  visibility: none;
+  opacity: 0;
+  transition: all 1s ease;
 }
 .closeForm{
   cursor: pointer;

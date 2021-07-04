@@ -316,7 +316,7 @@
 
 .form {
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -409,13 +409,13 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  top: 100%;
+  top: 0%;
   left: 0;
   background-color: whitesmoke;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
   grid-auto-flow: column;
   padding: 1rem;
   grid-column-gap: 10px;
@@ -457,6 +457,30 @@
   color: black;
 }
 
+.BookingForm .addGuest .addOption {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4/5;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: end !important;
+      -ms-flex-pack: end !important;
+          justify-content: flex-end !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.BookingForm .addGuest .addOption button {
+  font-size: 1rem;
+  padding: .5rem 2rem;
+  cursor: pointer;
+}
+
 .BookingForm .activeAddGuest {
   top: 0;
   visibility: visible;
@@ -464,6 +488,7 @@
 }
 
 .BookingForm .roomPrice {
+  position: relative;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
@@ -471,6 +496,7 @@
 }
 
 .BookingForm .roomPrice .roomDetails {
+  position: relative;
   height: 100%;
   display: -ms-grid;
   display: grid;
@@ -519,6 +545,55 @@
   padding: .5rem;
 }
 
+.BookingForm .roomPrice .roomdetailsOverlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  background-color: red;
+  visibility: hidden;
+  opacity: 0;
+  overflow: scroll;
+  padding: 1rem;
+  -webkit-transform: all 500ms ease;
+          transform: all 500ms ease;
+}
+
+.BookingForm .roomPrice .roomdetailsOverlay p {
+  white-space: nowrap;
+}
+
+.BookingForm .roomPrice .roomdetailsOverlayActive {
+  visibility: visible;
+  opacity: 1;
+  top: 5%;
+  -webkit-transform: all 500ms ease;
+          transform: all 500ms ease;
+}
+
+.BookingForm .todayDate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 1rem;
+  white-space: nowrap;
+  background-color: rgba(255, 0, 0, 0.541);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.BookingForm .todayDate p {
+  font-weight: bold;
+}
+
 .bookBtn, .AddBtn, .backBtn {
   cursor: pointer;
   font-size: 1rem;
@@ -526,6 +601,13 @@
   letter-spacing: 1px;
   padding: .5rem 2rem;
   margin: 1rem 1rem;
+}
+
+.backBtn {
+  visibility: none;
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .closeForm {
